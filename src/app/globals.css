@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   TANZADE KOZMETIK — LUXURY DESIGN SYSTEM
+   Inspired by Aesop's warm, editorial minimalism
+   ═══════════════════════════════════════════════════ */
+
+@theme inline {
+  /* ── Color Palette ── */
+  --color-cream: #F8F7F5;
+  --color-beige: #F2EFE9;
+  --color-sand: #E8E2D9;
+  --color-stone: #9C9588;
+  --color-stone-dark: #6B665E;
+  --color-charcoal: #3A3733;
+  --color-ink: #1A1917;
+  --color-gold: #B89F7A;
+  --color-gold-light: #D4C4A8;
+  --color-gold-dark: #8C7A5E;
+  --color-warm-white: #FDFCFA;
+  --color-overlay: rgba(26, 25, 23, 0.6);
+
+  /* ── Typography ── */
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  /* ── Spacing Scale (luxury breathing room) ── */
+  --spacing-luxury-xs: 0.5rem;
+  --spacing-luxury-sm: 1rem;
+  --spacing-luxury-md: 2rem;
+  --spacing-luxury-lg: 4rem;
+  --spacing-luxury-xl: 6rem;
+  --spacing-luxury-2xl: 8rem;
+  --spacing-luxury-3xl: 12rem;
+
+  /* ── Transitions ── */
+  --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 700ms;
+  --duration-cinematic: 1200ms;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 2px 20px rgba(26, 25, 23, 0.04);
+  --shadow-medium: 0 4px 40px rgba(26, 25, 23, 0.06);
+  --shadow-elevated: 0 8px 60px rgba(26, 25, 23, 0.08);
+}
+
+/* ── Base Styles ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 100%;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+#__next,
+main {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone-dark);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-ink);
+}
+
+/* ── Typography Utilities ── */
+.heading-display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-size: clamp(3rem, 8vw, 7rem);
+}
+
+.heading-hero-inner {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+.heading-editorial {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  font-size: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.body-refined {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px approx */
+}
+
+.label-luxury {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ── Luxury Transitions ── */
+.transition-luxury {
+  transition-property: all;
+  transition-duration: var(--duration-normal);
+  transition-timing-function: var(--ease-luxury);
+}
+
+.transition-slow {
+  transition-property: all;
+  transition-duration: var(--duration-slow);
+  transition-timing-function: var(--ease-smooth);
+}
+
+/* ── Dividers ── */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-light) 20%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 80%,
+    transparent
+  );
+  border: none;
+}
+
+.divider-subtle {
+  height: 1px;
+  background: var(--color-sand);
+  border: none;
+}
+
+/* ── Page transition fade ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-luxury) both;
+}
+
+/* ── Image treatment ── */
+.image-luxury {
+  filter: contrast(1.02) saturate(0.95);
+}
