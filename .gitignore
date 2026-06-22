@@ -9,3 +9,4 @@ build/
 *.mov
 *.psd
 *.ai
+public/videos/*.mp4
